@@ -1,0 +1,91 @@
+/* style-confirm.css */
+body {
+    background-color: #f14e4e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Letter container styling */
+.letter-container {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    width: 100%;
+    text-align: center;
+}
+
+.letter p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e60000;
+}
+
+/* Floating hearts animation */
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+.heart-bg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: red;
+    font-size: 24px;
+    animation: floatHearts 5s linear infinite;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Background floating hearts */
+.bg-heart {
+    position: absolute;
+    font-size: 20px;
+    color: rgba(255, 0, 0, 0.5);
+    animation: floatHearts 5s linear infinite;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
