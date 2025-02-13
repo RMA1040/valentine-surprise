@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the current page's URL to identify which page is loaded
     const currentPage = window.location.pathname.split("/").pop();
+    console.log("script is read")
 
     // Sound effect (common)
     const clickSound = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
@@ -17,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
             letter.style.display = "block";
             heart.style.display = "none";
             clickSound.play();
-            console.log("Sound should be playing")
         });
 
         yesBtn.addEventListener("click", function() {
