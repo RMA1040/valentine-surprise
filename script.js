@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
             letter.style.display = "block";
             heart.style.display = "none";
             clickSound.play();
+            console.log("Sound should be playing")
         });
 
         yesBtn.addEventListener("click", function() {
