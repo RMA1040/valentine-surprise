@@ -1,24 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Get the current page's URL to identify which page is loaded
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
     console.log("script is read")
 
     // Sound effect (common)
     const clickSound = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
 
     // Handle envelope click on index.html
-    if (currentPage === 'index.html') {
+    if (currentPage === "index.html") {
+        console.log("Index page script is running!");
         const envelope = document.getElementById("envelope");
-        const letter = document.querySelector(".letter");
-        const heart = document.querySelector(".heart");
-        const yesBtn = document.getElementById("yesBtn");
-        const noBtn = document.getElementById("noBtn");
-
-        envelope.addEventListener("click", function() {
-            letter.style.display = "block";
-            heart.style.display = "none";
-            clickSound.play();
-        });
+        if (envelope) {
+            envelope.addEventListener("click", function () {
+                document.querySelector(".letter").style.display = "block";
+                document.querySelector(".heart").style.display = "none";
+            });
+        } else {
+            console.error("Envelope element not found!");
+        };
 
         yesBtn.addEventListener("click", function() {
             window.location.href = "confirm.html"; // Redirect to confirm page on 'Yes'
